@@ -655,7 +655,7 @@ app.post("/reject-post", async (req, res) => {
 
     // 4️⃣ Make refund request
     const refundResponse = await axios.post(
-      "https://apitest.myfatoorah.com/v2/MakeRefund",
+      "https://api.myfatoorah.com/v2/MakeRefund",
       refundPayload,
       {
         headers: {
@@ -884,7 +884,7 @@ app.post("/save-user-info", async (req, res) => {
     };
 
     const invoiceResponse = await axios.post(
-      "https://apitest.myfatoorah.com/v2/ExecutePayment",
+      "https://api.myfatoorah.com/v2/ExecutePayment",
       {
         PaymentMethodId: "2",
         InvoiceValue: invoicePayload.InvoiceValue,
@@ -953,7 +953,7 @@ app.get("/api/retry-payment", async (req, res) => {
 
     // Call the MyFatoorah API to create a new invoice
     const invoiceResponse = await axios.post(
-      "https://apitest.myfatoorah.com/v2/ExecutePayment",
+      "https://api.myfatoorah.com/v2/ExecutePayment",
       {
         PaymentMethodId: "2",
         InvoiceValue: invoicePayload.InvoiceValue,
