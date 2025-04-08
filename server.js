@@ -655,7 +655,7 @@ app.post("/reject-post", async (req, res) => {
 
     // 4️⃣ Make refund request
     const refundResponse = await axios.post(
-      "https://api.myfatoorah.com/v2/MakeRefund",
+      "https://apitest.myfatoorah.com/v2/MakeRefund",
       refundPayload,
       {
         headers: {
@@ -884,7 +884,7 @@ app.post("/save-user-info", async (req, res) => {
     };
 
     const invoiceResponse = await axios.post(
-      "https://api.myfatoorah.com/v2/ExecutePayment",
+      "https://apitest.myfatoorah.com/v2/ExecutePayment",
       {
         PaymentMethodId: "2",
         InvoiceValue: invoicePayload.InvoiceValue,
@@ -953,7 +953,7 @@ app.get("/api/retry-payment", async (req, res) => {
 
     // Call the MyFatoorah API to create a new invoice
     const invoiceResponse = await axios.post(
-      "https://api.myfatoorah.com/v2/ExecutePayment",
+      "https://apitest.myfatoorah.com/v2/ExecutePayment",
       {
         PaymentMethodId: "2",
         InvoiceValue: invoicePayload.InvoiceValue,
@@ -1043,8 +1043,8 @@ app.all("/payment-callback", async (req, res) => {
 
     const webhookUrl =
     user.images && user.images.length > 0
-      ? "https://server.gallabox.com/accounts/66fc2e7313caf3280d638167/integrations/genericWebhook/67f28fcad1b4c62f8731435e/webhook"
-      : "https://server.gallabox.com/accounts/66fc2e7313caf3280d638167/integrations/genericWebhook/67f28fdeb3440b7aeef12319/webhook";
+      ? "https://server.gallabox.com/accounts/66fc2e7313caf3280d638167/integrations/genericWebhook/67f52a1b2710bcf10625c17b/webhook"
+      : "https://server.gallabox.com/accounts/66fc2e7313caf3280d638167/integrations/genericWebhook/67f52a2ee63950bdc0920f35/webhook";
   
   await axios.post(webhookUrl, gallaboxPayload);
 
