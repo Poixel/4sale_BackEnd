@@ -877,8 +877,8 @@ app.post("/save-user-info", async (req, res) => {
       CustomerEmail: email || "no-email@example.com",
       CustomerMobile: formattedWhatsapp,
       UserDefinedField: newUser._id.toString(), // Use user ID for tracking
-      CallBackUrl: `https://4salekwt.netlify.app/success-paid?userId=${newUser._id}`,
-      ErrorUrl: `https://4salekwt.netlify.app/payment-failed?userId=${newUser._id}`,
+      CallBackUrl: `http://4salekwt.go-pass.co/success-paid?userId=${newUser._id}`,
+      ErrorUrl: `http://4salekwt.go-pass.co/payment-failed?userId=${newUser._id}`,
       Language: "English",
       DisplayCurrencyIso: "KWD",
     };
@@ -945,8 +945,8 @@ app.get("/api/retry-payment", async (req, res) => {
       CustomerEmail: user.email || "no-email@example.com",
       CustomerMobile: formattedWhatsapp,
       UserDefinedField: user._id.toString(), // Use user id for tracking
-      CallBackUrl: `https://4salekwt.netlify.app/success-paid?userId=${user._id}`,
-      ErrorUrl: `https://4salekwt.netlify.app/payment-failed?userId=${user._id}`,
+      CallBackUrl: `http://4salekwt.go-pass.co/success-paid?userId=${user._id}`,
+      ErrorUrl: `http://4salekwt.go-pass.co/payment-failed?userId=${user._id}`,
       Language: "English",
       DisplayCurrencyIso: "KWD",
     };
